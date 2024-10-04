@@ -23,8 +23,8 @@ from shared_configs.configs import MODEL_SERVER_PORT
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 
-HF_CACHE_PATH = Path("/root/.cache/huggingface/")
-TEMP_HF_CACHE_PATH = Path("/root/.cache/temp_huggingface/")
+HF_CACHE_PATH = Path(os.getenv("HF_CACHE_PATH", "/root/.cache/huggingface/"))
+TEMP_HF_CACHE_PATH = Path(os.getenv("TEMP_HF_CACHE_PATH","/root/.cache/temp_huggingface/"))
 
 transformer_logging.set_verbosity_error()
 
